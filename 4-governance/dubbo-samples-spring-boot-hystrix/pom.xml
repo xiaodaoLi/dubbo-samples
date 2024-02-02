@@ -31,7 +31,7 @@
     <properties>
         <source.level>1.8</source.level>
         <target.level>1.8</target.level>
-        <dubbo.version>3.2.6</dubbo.version>
+        <dubbo.version>3.2.11</dubbo.version>
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <hystrix-starter.version>2.2.10.RELEASE</hystrix-starter.version>
         <aspectjweaver.version>1.9.20.1</aspectjweaver.version>
