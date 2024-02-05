@@ -18,20 +18,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.apache.dubbo</groupId>
+    <parent>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-samples-all</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <artifactId>1-basic</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+<!--    <version>1.0-SNAPSHOT</version>-->
 
     <name>Basic Usage</name>
     <description>Dubbo Basic Usage Samples</description>
 
     <modules>
-        <module>dubbo-samples-annotation</module>
+<!--        <module>dubbo-samples-annotation</module>-->
         <module>dubbo-samples-api</module>
-        <module>dubbo-samples-spring-xml</module>
-        <module>dubbo-samples-spring-boot</module>
-        <module>dubbo-samples-triple-unary</module>
-        <module>dubbo-samples-native-image</module>
+<!--        <module>dubbo-samples-spring-xml</module>-->
+<!--        <module>dubbo-samples-spring-boot</module>-->
+<!--        <module>dubbo-samples-triple-unary</module>-->
+<!--        <module>dubbo-samples-native-image</module>-->
     </modules>
 </project>
