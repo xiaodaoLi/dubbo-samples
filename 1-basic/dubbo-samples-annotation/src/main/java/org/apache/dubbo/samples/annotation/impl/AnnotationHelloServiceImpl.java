@@ -22,7 +22,7 @@ import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.samples.annotation.AnnotationConstants;
 import org.apache.dubbo.samples.annotation.api.HelloService;
 
-@DubboService(version = AnnotationConstants.VERSION, methods = {@Method(name = "sayGoodbye", timeout = 250, retries = 0)})
+@DubboService(version = AnnotationConstants.VERSION, methods = {@Method(name = "sayGoodbye", timeout = 2500, retries = 3)})
 public class AnnotationHelloServiceImpl implements HelloService {
 
     @Override

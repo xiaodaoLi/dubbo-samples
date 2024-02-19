@@ -21,8 +21,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>org.apache.dubbo</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>1-basic</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+<!--    <version>1.0-SNAPSHOT</version>-->
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -54,14 +59,16 @@
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-bom</artifactId>
-                <version>${dubbo.version}</version>
+<!--                <version>${dubbo.version}</version>-->
+                <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
-                <version>${dubbo.version}</version>
+<!--                <version>${dubbo.version}</version>-->
+                <version>${project.version}</version>
                 <type>pom</type>
             </dependency>
             <dependency>

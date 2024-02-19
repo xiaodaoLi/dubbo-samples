@@ -45,7 +45,7 @@ public class AnnotationAction {
     @DubboReference(interfaceClass = GreetingService.class,
             version = AnnotationConstants.VERSION,
             timeout = 1000,
-            methods = {@Method(name = "greeting", timeout = 3000, retries = 1)})
+            methods = {@Method(name = "greeting", timeout = 5000, retries = 3)})
     private GreetingService greetingService;
 
     public String doSayHello(String name) {
