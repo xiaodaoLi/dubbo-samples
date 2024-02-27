@@ -31,6 +31,11 @@ public class Application {
     private static final String ZOOKEEPER_ADDRESS = "zookeeper://" + ZOOKEEPER_HOST + ":" + ZOOKEEPER_PORT;
 
     public static void main(String[] args) {
+        //Provider 侧，服务提供者在升级 Dubbo3 后会默认保持双注册行为，即同时注册接口级地址和应用级地址到注册中心，一方面保持兼容，另一方面为未来消费端迁移做好准备
+        //Dubbo 会在 Zookeeper 的 /dubbo/interfaceName 和 /services/appName 下写入服务提供者的连接信息。
+        //Provider侧，双注册的开关可通过 -Ddubbo.application.register-mode=all/interface/instance （接口级别、应用级别、应用和接口级别同时注册） 控制，
+        // 我们推荐保持双注册的默认行为以减少后续迁移成本
+        // Consumer侧，-Ddubbo.application.service-discovery.migration = FORCE_APPLICATION/FORCE_INTERFACE/APPLICATION_FIRST
         ApplicationConfig applicationConfig = new ApplicationConfig("first-dubbo-provider");
         applicationConfig.setQosPort(33333);
 
