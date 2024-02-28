@@ -18,6 +18,7 @@
 package org.apache.dubbo.samples.client;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ReferenceConfig;
@@ -44,9 +45,17 @@ public class Application {
                 .start();
 
         GreetingsService service = reference.get();
-        String message = service.sayHi("dubbo");
-        System.out.println("Receive result ======> " + message);
-        System.in.read();
+        while(true) {
+            Scanner scanner = new Scanner(System.in);
+            final String line = scanner.nextLine();
+            System.out.println("input： "+ line);
+            if ("quit".equalsIgnoreCase(line) || "exit".equalsIgnoreCase(line)) {
+                break;
+            }
+            String message = service.sayHi(line);
+            System.out.println("input parameter is " + line);
+            System.out.println("Receive result ======> " + message);
+        }
         System.exit(0);
     }
 
