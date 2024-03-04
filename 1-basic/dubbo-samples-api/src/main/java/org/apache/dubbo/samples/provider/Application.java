@@ -22,6 +22,7 @@ import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.ServiceConfig;
 import org.apache.dubbo.config.bootstrap.DubboBootstrap;
+import org.apache.dubbo.samples.api.DateService;
 import org.apache.dubbo.samples.api.GreetingsService;
 
 public class Application {
@@ -33,6 +34,11 @@ public class Application {
     public static void main(String[] args) {
         //-DDUBBO_IP_TO_BIND=10.144.184.69
 
+        /**
+         * 元数据中心
+         * Dubbo从2.7.x开始，为了减轻注册中心的压力，将服务的注册模式从之前的 “接口——实例” 映射改成了“应用——实例”映射，
+         * 在“应用——实例”映射中，为了获得接口与应用的对应关系，Dubbo会往元数据中心存储应用与接口对应关系。
+         */
         //Provider 侧，服务提供者在升级 Dubbo3 后会默认保持双注册行为，即同时注册接口级地址和应用级地址到注册中心，一方面保持兼容，另一方面为未来消费端迁移做好准备
         //Dubbo 会在 Zookeeper 的 /dubbo/interfaceName 和 /services/appName 下写入服务提供者的连接信息。
         //Provider侧，双注册的开关可通过 -Ddubbo.application.register-mode=all/interface/instance （接口级别、应用级别、应用和接口级别同时注册） 控制，
@@ -41,15 +47,20 @@ public class Application {
         ApplicationConfig applicationConfig = new ApplicationConfig("first-dubbo-provider");
         applicationConfig.setQosPort(33333);
 
-        ServiceConfig<GreetingsService> service = new ServiceConfig<>();
-        service.setInterface(GreetingsService.class);
-        service.setRef(new GreetingsServiceImpl());
+        ServiceConfig<GreetingsService> greetingsServiceServiceConfig = new ServiceConfig<>();
+        greetingsServiceServiceConfig.setInterface(GreetingsService.class);
+        greetingsServiceServiceConfig.setRef(new GreetingsServiceImpl());
+
+        ServiceConfig<DateService> dateServiceServiceConfig = new ServiceConfig<>();
+        dateServiceServiceConfig.setInterface(DateService.class);
+        dateServiceServiceConfig.setRef(new DateServiceImpl());
 
         DubboBootstrap bootstrap = DubboBootstrap.getInstance()
             .application(applicationConfig)
             .registry(new RegistryConfig(ZOOKEEPER_ADDRESS))
             .protocol(new ProtocolConfig("dubbo", -1))
-            .service(service)
+            .service(greetingsServiceServiceConfig)
+            .service(dateServiceServiceConfig)
             .start();
         System.out.println("start provider success");
         bootstrap.await();
