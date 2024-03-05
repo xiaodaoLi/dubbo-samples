@@ -17,14 +17,14 @@
 
 package org.apache.dubbo.samples.client;
 
-import java.io.IOException;
-import java.util.Scanner;
-
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ReferenceConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.bootstrap.DubboBootstrap;
 import org.apache.dubbo.samples.api.GreetingsService;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Application {
     private static final String ZOOKEEPER_HOST = System.getProperty("zookeeper.address", "127.0.0.1");
@@ -45,6 +45,7 @@ public class Application {
                 .start();
 
         GreetingsService service = reference.get();
+        System.out.println("please input string:");
         while(true) {
             Scanner scanner = new Scanner(System.in);
             final String line = scanner.nextLine();
