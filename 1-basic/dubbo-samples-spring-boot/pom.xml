@@ -20,24 +20,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.apache</groupId>
-        <artifactId>apache</artifactId>
-        <version>23</version>
-        <relativePath/>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>1-basic</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.apache.dubbo</groupId>
     <artifactId>dubbo-samples-spring-boot</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Dubbo Samples Spring Boot</name>
     <description>Dubbo Samples Spring Boot</description>
 
     <properties>
-        <dubbo.version>3.2.6</dubbo.version>
+<!--        <dubbo.version>3.2.6</dubbo.version>-->
+        <dubbo.version>${project.version}</dubbo.version>
         <junit.version>4.13.1</junit.version>
         <spring-boot.version>2.7.8</spring-boot.version>
         <maven.compiler.source>1.8</maven.compiler.source>

@@ -17,9 +17,9 @@
 
 package org.apache.dubbo.samples.provider;
 
-import java.util.concurrent.CountDownLatch;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.concurrent.CountDownLatch;
 
 public class Application {
 
