@@ -24,7 +24,7 @@
     <packaging>pom</packaging>
     <groupId>org.apache.dubbo</groupId>
     <artifactId>dubbo-call-sc</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>Dubbo Call Spring Cloud</name>
     <description>Dubbo Call Spring Cloud</description>
 
@@ -39,6 +39,7 @@
         <target.level>1.8</target.level>
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
 <!--        <dubbo.version>3.3.0-beta.1-SNAPSHOT</dubbo.version>-->
+        <dubbo.version>${project.version}</dubbo.version>
         <junit.version>4.13.1</junit.version>
         <spring-boot.version>2.7.8</spring-boot.version>
         <spring.cloud.version>2021.0.5</spring.cloud.version>

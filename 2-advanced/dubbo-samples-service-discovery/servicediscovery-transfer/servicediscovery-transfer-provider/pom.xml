@@ -20,7 +20,7 @@
     <parent>
         <groupId>org.apache.dubbo</groupId>
         <artifactId>servicediscovery-transfer</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>servicediscovery-transfer-provider</artifactId>

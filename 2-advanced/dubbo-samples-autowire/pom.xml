@@ -20,14 +20,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.apache</groupId>
-        <artifactId>apache</artifactId>
-        <version>23</version>
-        <relativePath/>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>2-advanced</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>org.apache.dubbo</groupId>
-    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>dubbo-samples-autowire-consumer</module>
         <module>dubbo-samples-autowire-provider</module>

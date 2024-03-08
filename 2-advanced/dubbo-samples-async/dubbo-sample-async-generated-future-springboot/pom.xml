@@ -30,7 +30,7 @@
 
     <groupId>org.apache.dubbo</groupId>
     <artifactId>dubbo-sample-async-generated-future-springboot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>Dubbo Samples Async Generated Future In SpringBoot</name>

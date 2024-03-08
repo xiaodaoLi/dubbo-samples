@@ -18,10 +18,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.apache.dubbo</groupId>
+    <parent>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-samples-all</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <artifactId>2-advanced</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
 
     <name>Advanced Usage</name>
     <description>Dubbo Advanced Usage Samples</description>
@@ -47,16 +51,16 @@
         <module>dubbo-samples-mock</module>
         <module>dubbo-samples-notify</module>
         <module>dubbo-samples-scala</module>
-        <module>dubbo-samples-seata</module>
+<!--        <module>dubbo-samples-seata</module>-->
         <module>dubbo-samples-spi-compatible</module>
         <module>dubbo-samples-stub</module>
-        <module>dubbo-samples-tengine</module>
+<!--        <module>dubbo-samples-tengine</module>-->
         <module>dubbo-samples-validation</module>
         <module>dubbo-samples-version</module>
         <module>dubbo-samples-rpccontext</module>
         <module>dubbo-samples-spring-security</module>
         <module>dubbo-samples-triple-streaming</module>
-        <module>dubbo-samples-springcloud</module>
+<!--        <module>dubbo-samples-springcloud</module>-->
         <module>dubbo-samples-service-discovery</module>
         <module>dubbo-samples-triple-grpc</module>
         <module>dubbo-samples-triple-no-idl</module>

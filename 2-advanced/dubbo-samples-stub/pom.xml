@@ -25,12 +25,11 @@
     <parent>
         <groupId>org.apache.dubbo</groupId>
         <artifactId>2-advanced</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>dubbo-samples-stub</artifactId>
-    <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>Dubbo Samples Stub</name>

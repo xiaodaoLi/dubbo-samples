@@ -20,10 +20,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.apache.dubbo</groupId>
+    <parent>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>2-advanced</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <artifactId>dubbo-samples-seata</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
 
     <name>Dubbo Seata Samples</name>
     <description>Dubbo Seata Samples</description>

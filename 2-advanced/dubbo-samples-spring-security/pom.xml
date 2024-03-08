@@ -22,8 +22,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.apache.dubbo</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>2-advanced</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <artifactId>dubbo-samples-spring-security</artifactId>
 
