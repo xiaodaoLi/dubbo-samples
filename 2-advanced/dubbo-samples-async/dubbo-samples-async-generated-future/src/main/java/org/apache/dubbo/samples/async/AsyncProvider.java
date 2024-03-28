@@ -28,7 +28,8 @@ public class AsyncProvider {
     public static void main(String[] args) throws Exception {
         new EmbeddedZooKeeper(2181, false).start();
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/async-provider.xml");
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/async-provider.xml", "spring/MySpringConfig.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/MySpringConfig.xml");
         context.start();
 
         System.out.println("dubbo service started");

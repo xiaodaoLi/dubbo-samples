@@ -27,6 +27,13 @@ public interface GreetingService {
         return "Fine, " + name;
     }
 
+    /**
+     * 服务端提供了CompletableFuture 签名的接口。
+     * return CompletableFuture.supplyAsync() 业务执行已从 Dubbo 线程切换到业务线程，避免了对 Dubbo 线程池的阻塞
+     * @param name
+     * @param signal
+     * @return
+     */
     default CompletableFuture<String> greeting(String name, byte signal) {
         return CompletableFuture.completedFuture(greeting(name));
     }

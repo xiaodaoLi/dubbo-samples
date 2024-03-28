@@ -35,6 +35,8 @@ public class AsyncConsumer {
         AsyncService asyncService = context.getBean("asyncService", AsyncService.class);
         asyncService.sayHello("world");
 
+        //服务端没有提供CompletableFuture 签名的接口
+        // 方式1，使用RpcContext进行异步调用
         CompletableFuture<String> helloFuture = RpcContext.getContext().getCompletableFuture();
         helloFuture.whenComplete((retValue, exception) -> {
             if (exception == null) {
@@ -44,6 +46,7 @@ public class AsyncConsumer {
             }
         });
 
+        // 方式2，使用RpcContext进行异步调用
         CompletableFuture<String> f = RpcContext.getContext().asyncCall(() -> asyncService.sayHello("async call request"));
         System.out.println("async call returned: " + f.get());
 

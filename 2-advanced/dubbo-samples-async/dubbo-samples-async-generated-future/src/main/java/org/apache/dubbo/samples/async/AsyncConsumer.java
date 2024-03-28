@@ -36,8 +36,15 @@ public class AsyncConsumer {
         GreetingService greetingService = context.getBean("greetingService", GreetingService.class);
 
         CompletableFuture<String> future = greetingService.greeting("async call request", SIGNAL);
-        System.out.println("async call returned: " + future.get());
+        long asynBegin = System.currentTimeMillis();
+        String asynResult = future.get();
+        long asynEnd = System.currentTimeMillis();
+        System.out.println("async call returned: " + asynResult + " cost mills: " + (asynEnd - asynBegin));
 
-        System.out.println(greetingService.greeting("normal sync call request"));
+        long synBegin = System.currentTimeMillis();
+        String synResult = greetingService.greeting("normal sync call request");
+        long synEnd = System.currentTimeMillis();
+        System.out.println("sync call returned: " + synResult + " cost mills: " + (synEnd - synBegin));
+
     }
 }

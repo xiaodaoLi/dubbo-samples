@@ -21,6 +21,11 @@ package org.apache.dubbo.samples.async.api;
 
 public interface AsyncService {
 
+    /**
+     * 服务端提供的不是CompletableFuture 签名的接口
+     * @param name
+     * @return
+     */
     String sayHello(String name);
 
 }
