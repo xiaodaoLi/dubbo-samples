@@ -17,6 +17,8 @@
 
 package org.apache.dubbo.samples.provider;
 
+import com.iwhalecloud.bss.pub.client.ILocalCacheRefreshServiceImpl;
+import com.iwhalecloud.bss.pub.client.api.ILocalCacheRefreshService;
 import org.apache.dubbo.config.bootstrap.DubboBootstrap;
 import org.apache.dubbo.config.bootstrap.builders.ProtocolBuilder;
 import org.apache.dubbo.config.bootstrap.builders.ServiceBuilder;
@@ -27,7 +29,9 @@ public class Application {
         DubboBootstrap.getInstance()
                 .protocol(ProtocolBuilder.newBuilder().name("tri").port(50052).build())
                 .service(ServiceBuilder.newBuilder().interfaceClass(GreetingsService.class).ref(new GreetingsServiceImpl()).build())
+                .service(ServiceBuilder.newBuilder().interfaceClass(ILocalCacheRefreshService.class).ref(new ILocalCacheRefreshServiceImpl()).build())
                 .start()
                 .await();
     }
+
 }
